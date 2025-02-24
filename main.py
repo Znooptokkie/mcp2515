@@ -1,6 +1,7 @@
 import time
 from machine import SPI, Pin
 from mcp2515 import MCP2515
+from led_control import led_aan, led_uit
 
 # LED-instellingen
 led = Pin(15, Pin.OUT)  # GPIO 15 voor externe LED
@@ -20,13 +21,10 @@ while True:
     if message:
         can_id, data = message
         
-        # VOORBEELD voor ontvangen data te verwerken:
-        if can_id == 0x200: # Maak id 0x200 LED aansturing
+        if can_id == 0x200:  # LED-besturing via CAN
             if data[0] == 0x01:
-                # led_aan()
-                pass
+                led_aan()
             elif data[0] == 0x00:
-                # led_uit()
-                pass
+                led_uit()
 
     time.sleep(0.1)  # Voorkom overbelasting van de processor
