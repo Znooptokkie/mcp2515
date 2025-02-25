@@ -1,16 +1,18 @@
 import time
 from machine import SPI, Pin
 
-# MCP2515 SPI-opdrachten
-CMD_RESET = 0xC0
-CMD_READ = 0x03
-CMD_WRITE = 0x02
-CMD_RTS = 0x80
-RXB0CTRL = 0x60
-RXB0SIDH = 0x61
-RXB0SIDL = 0x62
-RXB0DLC = 0x65
-RXB0D0 = 0x66
+# 📌 SPI COMMANDO'S (Voor communicatie met MCP2515 via SPI)
+CMD_RESET = 0xC0  # Reset de MCP2515 en zet alle registers terug naar standaardwaarden
+CMD_READ = 0x03   # Lees een registerwaarde van de MCP2515
+CMD_WRITE = 0x02  # Schrijf een waarde naar een register op de MCP2515
+CMD_RTS = 0x80    # Request to Send (RTS): Stuurt een CAN-bericht uit buffer 0
+
+# 📌 RECEIVE BUFFER REGISTERS (Voor ontvangen CAN-berichten)
+RXB0CTRL = 0x60   # Controle-register voor Receive Buffer 0 (filterinstellingen)
+RXB0SIDH = 0x61   # Hoogste 8 bits van de ontvangen CAN-ID
+RXB0SIDL = 0x62   # Laagste 3 bits van de ontvangen CAN-ID + extra identifier bits
+RXB0DLC = 0x65    # Data Length Code (DLC) → Aantal bytes in ontvangen CAN-bericht (0-8)
+RXB0D0 = 0x66     # Eerste byte van de ontvangen CAN-data (RXB0D1, RXB0D2, etc. voor volgende bytes)
 
 class MCP2515:
     def __init__(self, spi, cs):
