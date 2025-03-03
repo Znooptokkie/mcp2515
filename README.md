@@ -112,6 +112,11 @@ ip link show can0
 
 ## 🔍 Test de communicatie
 
+### **Zorg eerst dat je candump correct hebt gedownload**
+```bash
+sudo apt install can-utils
+```
+
 ### **Start `candump` op de Raspberry Pi 5:**
 ```bash
 candump can0
