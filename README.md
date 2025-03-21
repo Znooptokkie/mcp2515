@@ -1,5 +1,9 @@
 # MCP2515 CAN-Bus Communicatie met Raspberry Pi 5 en Raspberry Pi Pico
 
+## Notities
+
+- **De code die zich in deze repo bevindt, is bedoelt voor de Pico, en neit voor de Raspberry PI 5. De library "machine" is namelijk niet geschikt voor de Raspberry PI 5**
+
 ## 📌 Benodigdheden
 - **Raspberry Pi 5** + **MCP2515 CAN-module**
 - **Raspberry Pi Pico** + **MCP2515 CAN-module**
