@@ -26,13 +26,12 @@
 | **MCP2515** | **Raspberry Pi 5 (GPIO)** |
 |------------|---------------------------|
 | **VCC** | **5V** |
-| **VSYS** | **5V** |
 | **GND** | **GND** |
 | **CS** | **GPIO 8 (Pin 24, CE0)** |
 | **SCK** | **GPIO 11 (Pin 23, SCLK)** |
 | **SI (MOSI)** | **GPIO 10 (Pin 19, MOSI)** |
 | **SO (MISO)** | **GPIO 9 (Pin 21, MISO)** |
-| **INT** | **GPIO 25 (Pin 22, Interrupt)** |
+| **INT** | **GPIO 25 (Pin 22, Optioneel)** |
 
 ---
 
@@ -40,13 +39,13 @@
 
 | **MCP2515** | **Raspberry Pi Pico (GPIO)** |
 |------------|-------------------------------|
-| **VCC** | **3.3V (GEEN 5V!) (Pin 36)** |
+| **VCC** | **5V (Pin 40)** |
 | **GND** | **GND** |
 | **CS** | **GP17 (Pin 22)** |
 | **SCK** | **GP18 (Pin 24)** |
 | **SI (MOSI)** | **GP19 (Pin 25)** |
 | **SO (MISO)** | **GP16 (Pin 21)** |
-| **INT** | **GP20** |
+| **INT** | **GP20 (Optioneel)** |
 
 ---
 
